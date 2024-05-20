@@ -4,7 +4,7 @@
     (modulesPath + "/virtualisation/digital-ocean-config.nix")
   ];
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "23.11";
 
   swapDevices = [
     {
