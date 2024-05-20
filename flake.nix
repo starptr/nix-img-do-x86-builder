@@ -7,7 +7,6 @@
     flake-utils.lib.eachDefaultSystem (system: 
       let
         pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
-        mach-nix-lib = mach-nix.lib."${system}";
       in
       {
         devShells.default = import ./shell.nix { inherit pkgs; };
