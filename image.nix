@@ -1,8 +1,12 @@
-{ pkgs ? import <nixpkgs> { } }:
+{ pkgs ? import (builtins.fetchTarball {
+  name = "nixos-23.11";
+  url = "https://github.com/NixOS/nixpkgs/archive/refs/tags/23.11.tar.gz";
+  sha256 = "1ndiv385w1qyb3b18vw13991fzb9wg4cl21wglk89grsfsnra41k";
+}) { } }:
 let config = {
   imports = [ <nixpkgs/nixos/modules/virtualisation/digital-ocean-image.nix> ];
 
-  # system.stateVersion = "24.05";
+  system.stateVersion = "23.11";
 
   swapDevices = [
     {
